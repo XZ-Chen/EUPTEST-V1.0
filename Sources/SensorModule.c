@@ -91,6 +91,8 @@ void SensorScan(uint16 *pSensor)
     *(pSensor+0) = crankspeed_sensor.value[6];
     #elif(DEBUGMODE == 2)   
     *(pSensor+0) = 2000;
+    #elif(DEBUGMODE == 3)   
+    *(pSensor+0) = 2000;
     #endif
     *(pSensor+1) = pedalpos_sensor.value[6];
     *(pSensor+2) = stppos_sensor.value[6];

@@ -104,6 +104,9 @@ void DIScan(uint16 *pDI)
   #elif(DEBUGMODE == 2)   
     *pDI = ON;
     *(pDI+1) = ON;
+  #elif(DEBUGMODE == 3)   
+    *pDI = DIRead(DI_IGSWITCH_PIN);
+    *(pDI+1) = DIRead(DI_LNGSWITCH_PIN); 
   #endif
 }
 //读高位开关状态

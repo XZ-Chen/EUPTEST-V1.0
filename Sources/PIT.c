@@ -12,7 +12,7 @@
 //功  能: 周期中断定时器初始化                                             *
 //参  数: 无                                                               *
 //返  回: 无                                                               * 
-//说  明: 无                                                               *
+//说  明: time-out period = (PITMTLD + 1) * (PITLD + 1) / fBUS.                                                             *
 //-------------------------------------------------------------------------*  
 void PITInit(void){
    PITCFLMT_PITE = 0;          //disable PIT
@@ -20,9 +20,10 @@ void PITInit(void){
    PITMUX_PMUX1 = 1;           //ch1 connected to micro timer 1
    PITMUX_PMUX2 = 1;           //ch2 connected to micro timer 1
    PITMUX_PMUX3 = 0;           //ch3 connected to micro timer 0
-   PITMTLD0 = 10 ;             //micro time base 0 equals 39 clock cycles   1us
-   PITMTLD1 = 39 ;             //micro time base 1 equals 39 clock cycles   1us  
-   PITLD0 = 3999;               //time-out period = (PITMTLD + 1) * (PITLD + 1) / fBUS. 
+   PITMTLD0 = 1 ;             //micro time base 0 equals 39 clock cycles   1us
+   PITMTLD1 = 39 ;           //micro time base 1 equals 39 clock cycles   1us  
+   PITLD0 = 19999;             
+   PITLD3 = 1;                 //ch2 base time 100ns for current AD 
    //1ms的周期中断                  
    PITINTE_PINTE0 = 1;        //enable interupt channel 0
    PITINTE_PINTE1 = 1;        //enable interupt channel 1  

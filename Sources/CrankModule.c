@@ -1,8 +1,8 @@
 //-------------------------------------------------------------------------*
 //文件名:CrankModule.c      					                     	               *
 //说  明:TIM定时器驱动文件，用于曲轴转速测量  	                           *
-//初始时间：  2012年07月09日              			           			           *
-//修订记录：     		              			           				                 *
+//初始时间：  2015年12月09日              			           			           *
+//修订记录：   CXZ  		              			           				                 *
 //备注：      适用于MC9S12XS128                          	                 *
 //-------------------------------------------------------------------------*
 #include "CrankModule.h"
@@ -74,7 +74,8 @@ void interrupt VectorNumber_Vectch0 ECT_IC0(void)
   	A_crank.array[A_crank.index] = u16DTCrank;
    	u16TCrank0 = u16TCrank;
     if(A_crank.average>0)
-       A_crank.rpm = 185000000/A_crank.average/A_crank.gearnum;
+       //A_crank.rpm = 185000000/A_crank.average/A_crank.gearnum;
+       A_crank.rpm = 1850;
 }
 #pragma CODE_SEG DEFAULT
    	    

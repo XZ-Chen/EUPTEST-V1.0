@@ -317,14 +317,14 @@ void NormalCtrl()
 {
   uint32 nTemp;
   G_DOLNGRVRelay = ON;
-	//***************查询map*******************************//
+	/***************查询map*******************************
 	G_un16InjWide = look2D_U16_U16_U16(G_un16RPM,G_un16Pedal, \
 						        	u16TabSpeedX, 19,\
 							        u16TabPedalY, 14,u16TabInjWidth);
 	G_un16StepperPos = look2D_U16_U16_U16(G_un16RPM,G_un16Pedal, \
 						        	u16TabSpeedX, 19,\
 							        u16TabPedalY,14,u16TabStepperPos);
-	/***************步进电机步数计算*******************************						        
+	//***************步进电机步数计算*******************************/						        
   nTemp = ((uint32)G_un16StepperPos + (uint32)G_un16StpP1)*((uint32)G_un16StpP2);
   nTemp = nTemp/100;
   G_un16StepperPos = nTemp&0xffff;

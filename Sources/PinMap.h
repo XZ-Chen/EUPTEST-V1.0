@@ -100,7 +100,7 @@
 
 
 #define AD_PEDAL_CH    PIN15_AD    //油门位置AN3
-//#define AD_STEPPER_CH  PIN16_AD    //步进电机位置AN4 
+#define AD_STEPPER_CH  PIN16_AD    //步进电机位置AN4 
 
 #define INJECTOR_PIN1 PIN37_HDO
 #define INJECTOR_PIN2 PIN38_HDO
