@@ -11,8 +11,8 @@
 
 
 //#define DEBUGMODE  1     //普通模式
-//#define DEBUGMODE  2     //调试模式
+#define DEBUGMODE  2     //调试模式
 
-#define DEBUGMODE  3     //智洲模式
+//#define DEBUGMODE  3     //智洲模式
 
 #endif

@@ -190,6 +190,7 @@ void SysOutputProcess(void)
       else
          nCycle = 0;
       InjectorWide(nCycle,G_un16InjWide);
+      EUPInjector(G_un16InjWide);
       //PWMOutput(3,218);
       //PWMOutput(2,77);
       //PWMOutput(1,111);
@@ -317,17 +318,17 @@ void NormalCtrl()
 {
   uint32 nTemp;
   G_DOLNGRVRelay = ON;
-	/***************查询map*******************************
+	/***************查询map*******************************/
 	G_un16InjWide = look2D_U16_U16_U16(G_un16RPM,G_un16Pedal, \
 						        	u16TabSpeedX, 19,\
 							        u16TabPedalY, 14,u16TabInjWidth);
-	G_un16StepperPos = look2D_U16_U16_U16(G_un16RPM,G_un16Pedal, \
+	/*G_un16StepperPos = look2D_U16_U16_U16(G_un16RPM,G_un16Pedal, \
 						        	u16TabSpeedX, 19,\
 							        u16TabPedalY,14,u16TabStepperPos);
-	//***************步进电机步数计算*******************************/						        
+	/***************步进电机步数计算*******************************						        
   nTemp = ((uint32)G_un16StepperPos + (uint32)G_un16StpP1)*((uint32)G_un16StpP2);
   nTemp = nTemp/100;
-  G_un16StepperPos = nTemp&0xffff;
+  G_un16StepperPos = nTemp&0xffff;   */
   
 	//***************喷射阀脉宽计算*******************//
 	if (G_un16RPM >= G_un16HighSpeed)	

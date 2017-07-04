@@ -113,6 +113,8 @@
 #define DIESELINJ_LV  PIN38_HDO
 #define LNGINJ_HV     PIN39_HDO
 #define LNGINJ_LV     PIN40_HDO
+#define Cylinder_1      PIN51_HDO
+#define Cylinder_2      PIN52_HDO
 
 
 

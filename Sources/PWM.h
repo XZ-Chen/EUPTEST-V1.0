@@ -28,6 +28,6 @@ void PWMInit(void);
 //返  回: 无                                                               * 
 //说  明: 无                                                               *
 //-------------------------------------------------------------------------*
-void PWMOutput(uint8 nCh,uint8 nWide);  
+void PWMOutput(uint8 nCh,uint8 status);  
 
 #endif

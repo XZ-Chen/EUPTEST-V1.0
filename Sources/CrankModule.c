@@ -36,7 +36,7 @@ void CrankModuleInit(void){
         A_crank.array[i] = 0;      
     ECT_TSCR1 = 0x80;              //1000   允许ECT主定时器运行
 }
-
+             
 uint16 CrankSpeedRead(void) { 
   if(A_crank.stopcnt < 25)   //25*20ms = 500ms无转速信号
      A_crank.stopcnt++;
@@ -74,8 +74,7 @@ void interrupt VectorNumber_Vectch0 ECT_IC0(void)
   	A_crank.array[A_crank.index] = u16DTCrank;
    	u16TCrank0 = u16TCrank;
     if(A_crank.average>0)
-       //A_crank.rpm = 185000000/A_crank.average/A_crank.gearnum;
-       A_crank.rpm = 1850;
+       A_crank.rpm = 185000000/A_crank.average/A_crank.gearnum;
 }
 #pragma CODE_SEG DEFAULT
    	    

@@ -32,6 +32,7 @@ void main(void) {
   SensorModuleInit();   //stepper pos; exhaust temp;pedal pos;
   CrankModuleInit();    //crankshaft speed measurement 
   InjectorModuleInit(); //Injector module initial
+  //EUPInjectorInit();
   StepperModuleInit();  //Steppermotor initial
   SysVarInit(); 
   StartSystemTimer();  //¿ªÆô¶¨Ê±Æ÷

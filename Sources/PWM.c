@@ -55,17 +55,15 @@ uint8 *pPWMDTYn[8] = {&PWMDTY0,&PWMDTY1,&PWMDTY2,&PWMDTY3,&PWMDTY4,&PWMDTY5,&PWM
     PWME |= (0x01 << nCh);   
 }      */
 
-void PWMOutput(uint8 nCh,uint8 nWide){
-    //if(nCh > 7)
-    //  return;
-    if(nWide == 0) {
-      PWME &= 0xff^(0x01 << nCh);
-      return;
-    } 
-    *pPWMDTYn[nCh] = nWide;
-    //PWMDTY3 = 1000;
-    //使能相应的PWM控制位
-    //PWME |= (0x01 << nCh);   
-    //PWME = 0xff;
-    //pPWMDTYn[nCh] = nWide;
+void PWMOutput(uint8 nCh,uint8 status)
+{
+    if(status == ON) {
+      
+      PWME = 0xff;
+      *pPWMDTYn[nCh] = 125;
+    }
+    else if (status == OFF) {
+      
+      PWME = 0x00;
+    }
 }
