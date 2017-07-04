@@ -189,10 +189,10 @@ void SysOutputProcess(void)
       }
       else
          nCycle = 0;
-      //InjectorWide(nCycle,G_un16InjWide);
-      PWMOutput(3,218);
-      PWMOutput(2,77);
-      PWMOutput(1,111);
+      InjectorWide(nCycle,G_un16InjWide);
+      //PWMOutput(3,218);
+      //PWMOutput(2,77);
+      //PWMOutput(1,111);
       nInjWidePre = G_un16InjWide;
    }
 }

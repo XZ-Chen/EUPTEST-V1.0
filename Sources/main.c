@@ -38,7 +38,7 @@ void main(void) {
   JudgeFlashStatus();   //判断Flash是否被写入
   INIT_SCI();  
   _ENABLE_COP_X();      //看门狗设置
-  PWMInit();
+  //PWMInit();
   EnableInterrupts; 
   for(;;)
   {
