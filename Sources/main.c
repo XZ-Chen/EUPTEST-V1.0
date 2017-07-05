@@ -19,9 +19,9 @@ void main(void) {
   //关总中断
   DisableInterrupts;
   //MCU peripheral unit initial
-  PLLInit();   //Fbus = 40MHZ
-  //INIT_PLL();    //飞翔实验板16M晶振                   
-  MSCANInit();            //CAN Baudrate = 500KHZ
+  //PLLInit();   //Fbus = 40MHZ
+  INIT_PLL();    //飞翔实验板16M晶振                   
+  //MSCANInit();            //CAN Baudrate = 500KHZ
   DFlashInit();         //Data Flash initial  
   PITInit();
   SPIInit();
@@ -44,7 +44,7 @@ void main(void) {
   for(;;)
   {
       SysTaskProcess();   //System task
-      MSCANProcess();     //CAN Communication
+      //MSCANProcess();     //CAN Communication
       SysDigProcess();    //Disgnose
       _FEED_COP();        // feeds the dog    
   }

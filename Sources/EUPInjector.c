@@ -77,6 +77,6 @@ interrupt VectorNumber_Vectch5 void ECT_OC5(void)
     //ECT_TC5 = ECT_TCNT + G_un16InjWide/4;         //设置输出比较时间为0.25s
   }
   PWMOutput(1,OFF);
-    
+  DOOutput(Cylinder_1,OFF);  
 }
 #pragma CODE_SEG DEFAULT

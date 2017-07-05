@@ -83,14 +83,14 @@ void INIT_PLL(void)
     CRGINT &= 0xDF;
     
     #if(BUS_CLOCK == 40000000) 
-      SYNR = 0x44;
+      SYNR = 0x04;
     #elif(BUS_CLOCK == 32000000)
       SYNR = 0x43;     
     #elif(BUS_CLOCK == 24000000)
       SYNR = 0x42;
     #endif 
 
-    REFDV = 0x81;         //PLLCLK=2¡ÁOSCCLK¡Á(SYNR+1)/(REFDV+1)£½64MHz ,fbus=32M
+    REFDV = 0x01;         //PLLCLK=2¡ÁOSCCLK¡Á(SYNR+1)/(REFDV+1)£½64MHz ,fbus=32M
     PLLCTL =PLLCTL|0x70;  //Enable PLL circuit
     asm NOP;
     asm NOP;
