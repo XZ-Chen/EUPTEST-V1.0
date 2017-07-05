@@ -35,7 +35,7 @@ void EUPInjector(uint16 nWide) //喷射时间
     
     }
     DOOutput(Cylinder_1,ON);
-    //_nop_();
+    asm NOP;
     DOOutput(DIESELINJ_HV,ON);
     ECT_TFLG1_C7F = 1;
     ECT_TC7 = ECT_TCNT + 1000;         //设置输出比较时间为0.4ms
@@ -47,7 +47,8 @@ interrupt VectorNumber_Vectch7 void ECT_OC7(void)
   if(ECT_TFLG1_C7F == 1)
   {
     ECT_TFLG1_C7F = 1;
-    ECT_TC6 = ECT_TCNT + 1250;         //设置输出比较时间为0.25s
+    ECT_TFLG1_C6F = 1;
+    ECT_TC6 = ECT_TCNT + 1250;         //设置输出比较时间为0.25ms
   }
   DOOutput(DIESELINJ_HV,OFF);
     
@@ -61,6 +62,7 @@ interrupt VectorNumber_Vectch6 void ECT_OC6(void)
   if(ECT_TFLG1_C6F == 1)
   {
     ECT_TFLG1_C6F = 1;
+    ECT_TFLG1_C5F = 1;
     ECT_TC5 = ECT_TCNT + G_un16InjWide/4;         //设置输出比较时间为0.25s
   }
   PWMOutput(1,ON);  //#define DIESELINJ_LV  1
